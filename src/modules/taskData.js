@@ -21,7 +21,6 @@ const myTasks = [
   },
 ];
 
-// const myTasks = myunsortedTasks.sort(()=>Math.random()-0.5)
 const myTasksLength = myTasks.length;
 
 export { myTasks, myTasksLength };

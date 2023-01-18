@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <div align="center"> 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>Microverse README Template</b></h3>
@@ -132,7 +132,7 @@ Give a ⭐️ if you like this project!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a> 
-Thank you Cindy Shin for the Awesome Design Template.
+Thank you  web.archive.org. for the Awesome Design Template.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
