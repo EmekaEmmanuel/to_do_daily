@@ -1,4 +1,4 @@
-# webpack_init 
+# ToDo APP 
 
 <a name="readme-top"></a>
 
@@ -32,7 +32,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license) 
 
-# 📖 [webpack_init ] <a name="about-project"></a>
+# 📖 [to_do_daily ] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
@@ -53,7 +53,7 @@ This is a to learn package management system using webpack.
 
 ## Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://emekaemmanuel.github.io/webpack_init/) 
+- [Live Demo Link](https://emekaemmanuel.github.io/to_do_daily/) 
 
 ## Project Presentation <a name="project-presentation"></a>
 
@@ -84,7 +84,7 @@ This is a to learn package management system using webpack.
 Clone this repository to your desired folder:
 
   cd my-folder
-  git clone https://github.com/EmekaEmmanuel/webpack_init.git
+  git clone https://github.com/EmekaEmmanuel/to_do_daily.git
 
 ### Install
   -  [Git](https://git-scm.com/downloads)
@@ -120,7 +120,7 @@ Clone this repository to your desired folder:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/https://github.com/EmekaEmmanuel/webpack_init/issues).
+Feel free to check the [issues page](../../issues/https://github.com/EmekaEmmanuel/to_do_daily/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
