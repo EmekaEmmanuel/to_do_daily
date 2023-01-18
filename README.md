@@ -36,7 +36,7 @@
 
 > Describe your project in 1 or 2 sentences.
 
-This is a to learn package management system using webpack.
+This project is a simple program to track our To Do tasks; Built using webpack and served by a webpack dev server.
 
 ## 🛠 Built With <a name="built-with"></a>
 
