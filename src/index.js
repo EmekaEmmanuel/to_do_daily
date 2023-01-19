@@ -45,19 +45,18 @@ const form = document.querySelector('.todo_form');
 
 const newToDoRec = new ToDoRecord();
 
-let clearallBtn = document.querySelector('.clear_all')
-console.log(clearallBtn);
+const clearallBtn = document.querySelector('.clear_all');
 
-clearallBtn.addEventListener('click', (e)=>{
-  newToDoRec.clearAll()
-})
+clearallBtn.addEventListener('click', () => {
+  newToDoRec.clearAll();
+});
 
 const clearInputFields = (description) => {
   description.value = '';
 };
 
 window.addEventListener('load', () => {
-  newToDoRec.displayToDoRecord(); 
+  newToDoRec.displayToDoRecord();
 });
 
 form.addEventListener('submit', (e) => {
