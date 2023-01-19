@@ -76,12 +76,9 @@ export default class ToDoRecord {
     this.displayToDoRecord();
   }
 
-  updateDescriptions(clickCheckEditBtn) {
-    console.log(clickCheckEditBtn);
-    let editBtnAttribut = clickCheckEditBtn.getAttribute('descId');
-    console.log(editBtnAttribut);
-    let getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`)
-    console.log(getEditInputTag.value);
+  updateDescriptions(clickCheckEditBtn) { 
+    let editBtnAttribut = clickCheckEditBtn.getAttribute('descId'); 
+    let getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`) 
     getEditInputTag.classList.remove('hide')
     clickCheckEditBtn.classList.add('hide')
     getEditInputTag.addEventListener('keypress', (e) => {
@@ -90,8 +87,9 @@ export default class ToDoRecord {
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
         const storingparam = this.storedTasks;
         byResetIndex(storingparam);
-        this.displayToDoRecord(); 
-        window.location.reload();
+        this.displayToDoRecord();  
+        getEditInputTag.classList.add('hide')
+        clickCheckEditBtn.classList.remove('hide')
       }
     })
   } 
