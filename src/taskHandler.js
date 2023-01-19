@@ -102,19 +102,30 @@ export default class ToDoRecord {
   }
 
   updateTaskStatus(clickCheckBoxBtn) {
-    let checkBoxindex = clickCheckBoxBtn.getAttribute('checkbox_index'); 
-    clickCheckBoxBtn.addEventListener('change', () => { 
-      if (clickCheckBoxBtn.checked===true) { 
-        this.storedTasks[checkBoxindex].completed=true;
-        console.log(this.storedTasks[checkBoxindex].completed); 
+    let checkBoxindex = clickCheckBoxBtn.getAttribute('checkbox_index');
+    clickCheckBoxBtn.addEventListener('change', () => {
+      if (clickCheckBoxBtn.checked === true) {
+        this.storedTasks[checkBoxindex].completed = true;
+        console.log(this.storedTasks[checkBoxindex].completed);
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+      }
+      if (clickCheckBoxBtn.checked === false) {
+        this.storedTasks[checkBoxindex].completed = false;
+        console.log(this.storedTasks[checkBoxindex].completed);
+        localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+      }
+    })
+  }
 
-      }
-      if (clickCheckBoxBtn.checked===false) { 
-        this.storedTasks[checkBoxindex].completed=false;
-        console.log(this.storedTasks[checkBoxindex].completed); 
-        localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
-      }
-    }) 
+  clearAll() {
+    const filteredTasks = this.storedTasks.filter(
+      task => task.completed!==true
+      ); 
+    this.storedTasks = filteredTasks;
+    localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+    const storingparam = this.storedTasks;
+    byResetIndex(storingparam);
+    this.displayToDoRecord(); 
+
   }
 }
