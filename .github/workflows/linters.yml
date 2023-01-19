@@ -5,7 +5,7 @@ on: pull_request
 env:
   FORCE_COLOR: 1
 
-jobs:
+jobs: 
   webhint:
     name: Webhint
     runs-on: ubuntu-22.04
