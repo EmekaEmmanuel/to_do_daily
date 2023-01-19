@@ -36,7 +36,8 @@ export default class ToDoRecord {
           += `<article key=${storingparam[i].index} class=" todo_item">
             <fieldset class="border_none">
             <input class="border_none" type="checkbox">
-            <p class="font3">${storingparam[i].description}</p>
+            <input class="input_${i} border_none hide font3" data-inputID="${i}" type="text" value=${storingparam[i].description} required> 
+            <p descId='${i}' class="describ font3">${storingparam[i].description}</p>
         </fieldset>
   
         <figure>
@@ -48,11 +49,19 @@ export default class ToDoRecord {
       listBody.innerHTML = eachList;
       listBody.addEventListener('click', (e) => {
         const checkClickedBtn = e.target.classList.contains('remove_btn');
-        const clicked = e.target;
-        if (!checkClickedBtn) {
+        const checkEditBtn = e.target.classList.contains('describ');
+        if (checkClickedBtn) {
+          const clicked = e.target;
+          this.removeToDo(clicked);
+        }
+        if (checkEditBtn) {
+          const clickCheckEditBtn = e.target;
+          this.updateDescriptions(clickCheckEditBtn)
+        }
+        else {
           return;
         }
-        this.removeToDo(clicked);
+
       });
     }
   }
@@ -66,4 +75,24 @@ export default class ToDoRecord {
     byResetIndex(storingparam);
     this.displayToDoRecord();
   }
+
+  updateDescriptions(clickCheckEditBtn) {
+    console.log(clickCheckEditBtn);
+    let editBtnAttribut = clickCheckEditBtn.getAttribute('descId');
+    console.log(editBtnAttribut);
+    let getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`)
+    console.log(getEditInputTag.value);
+    getEditInputTag.classList.remove('hide')
+    clickCheckEditBtn.classList.add('hide')
+    getEditInputTag.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        this.storedTasks[editBtnAttribut].description = getEditInputTag.value;
+        localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+        const storingparam = this.storedTasks;
+        byResetIndex(storingparam);
+        this.displayToDoRecord(); 
+        window.location.reload();
+      }
+    })
+  } 
 }

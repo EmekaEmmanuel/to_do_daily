@@ -17,7 +17,7 @@ const appContainerTemplate = () => `
   <main>
     <form class="todo_form">
       <fieldset class="border_none">
-        <input class="description_input todo_form_input font2 border_none" type="" placeholder="Add to your list..."
+        <input class="description_input todo_form_input font2 border_none" type="text" placeholder="Add to your list..."
           required>
       </fieldset>
       <fieldset class="border_none">
@@ -31,7 +31,8 @@ const appContainerTemplate = () => `
       <article class=" todo_item">
         <fieldset class="border_none">
           <input class="border_none" type="checkbox">
-          <p class="font3">Go to school</p>
+          <input class="border_none" type="checkbox">
+          <p class="describ font3">Go to school</p>
         </fieldset>
 
         <figure>
