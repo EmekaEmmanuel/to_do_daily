@@ -56,12 +56,10 @@ export default class ToDoRecord {
         }
         if (checkEditBtn) {
           const clickCheckEditBtn = e.target;
-          this.updateDescriptions(clickCheckEditBtn)
-        }
-        else {
+          this.updateDescriptions(clickCheckEditBtn);
+        } else {
           return;
         }
-
       });
     }
   }
@@ -76,21 +74,21 @@ export default class ToDoRecord {
     this.displayToDoRecord();
   }
 
-  updateDescriptions(clickCheckEditBtn) { 
-    let editBtnAttribut = clickCheckEditBtn.getAttribute('descId'); 
-    let getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`) 
-    getEditInputTag.classList.remove('hide')
-    clickCheckEditBtn.classList.add('hide')
+  updateDescriptions(clickCheckEditBtn) {
+    const editBtnAttribut = clickCheckEditBtn.getAttribute('descId');
+    const getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`);
+    getEditInputTag.classList.remove('hide');
+    clickCheckEditBtn.classList.add('hide');
     getEditInputTag.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         this.storedTasks[editBtnAttribut].description = getEditInputTag.value;
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
         const storingparam = this.storedTasks;
         byResetIndex(storingparam);
-        this.displayToDoRecord();  
-        getEditInputTag.classList.add('hide')
-        clickCheckEditBtn.classList.remove('hide')
+        this.displayToDoRecord();
+        getEditInputTag.classList.add('hide');
+        clickCheckEditBtn.classList.remove('hide');
       }
-    })
-  } 
+    });
+  }
 }
