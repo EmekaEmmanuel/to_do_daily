@@ -1,8 +1,7 @@
 import './style.css';
 import ToDoRecord from './taskHandler.js';
 import refreshImg from './img/Refresh_icon.svg.png';
-import arrowIconImg from './img/favpng_arrow-icon-design.png';
-import trashBinImg from './img/trashbin.png';
+import arrowIconImg from './img/favpng_arrow-icon-design.png'; 
 
 const appContainer = document.querySelector('.app_container');
 
@@ -28,19 +27,7 @@ const appContainerTemplate = () => `
     <div class="empty_todo_tasks"></div>
 
     <div class="itemBox">
-      <article class=" todo_item">
-        <fieldset class="border_none">
-          <input class="border_none" type="checkbox">
-          <input class="border_none" type="checkbox">
-          <p class="describ font3">Go to school</p>
-        </fieldset>
-
-        <figure>
-          <!-- <span>&#8230;</span> -->
-          <!-- <img class="remove_btn" src=${trashBinImg} alt=""> -->
-        </figure>
-
-      </article>
+      
     </div>
   </main>
 

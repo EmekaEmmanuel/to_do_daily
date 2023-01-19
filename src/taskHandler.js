@@ -41,8 +41,8 @@ export default class ToDoRecord {
         </fieldset>
   
         <figure>
-            <!-- <span>&#8230;</span> -->
-            <img class="remove_btn" index=${storingparam[i].index} src=${trashBinImg} alt="">
+            <span class="dots_${i} hide">&#8230;</span>
+            <img class="bin_${i} remove_btn" index=${storingparam[i].index} src=${trashBinImg} alt="">
         </figure>
         </article>  `;
       }
@@ -75,8 +75,12 @@ export default class ToDoRecord {
   updateDescriptions(clickCheckEditBtn) {
     const editBtnAttribut = clickCheckEditBtn.getAttribute('descId');
     const getEditInputTag = document.querySelector(`.input_${editBtnAttribut}`);
+    const getTripleDotsTag = document.querySelector(`.dots_${editBtnAttribut}`);
+    const getBinImgTag = document.querySelector(`.bin_${editBtnAttribut}`);
     getEditInputTag.classList.remove('hide');
     clickCheckEditBtn.classList.add('hide');
+    getTripleDotsTag.classList.remove('hide')
+getBinImgTag.classList.add('hide')
     getEditInputTag.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         this.storedTasks[editBtnAttribut].description = getEditInputTag.value;
@@ -86,7 +90,9 @@ export default class ToDoRecord {
         this.displayToDoRecord();
         getEditInputTag.classList.add('hide');
         clickCheckEditBtn.classList.remove('hide');
-      }
+        getBinImgTag.classList.remove('hide')
+        getTripleDotsTag.classList.add('hide')
+      } 
     });
   }
 }

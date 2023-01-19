@@ -53,6 +53,10 @@
   border-bottom: 2px solid #ececec;
 }
 
+.todo_item:hover {
+ background-color: #ececec; 
+}
+
 .todo_item figure {
   display: flex;
   justify-content: center;
