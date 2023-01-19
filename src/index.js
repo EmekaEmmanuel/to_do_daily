@@ -32,7 +32,7 @@ const appContainerTemplate = () => `
   </main>
 
   <footer class="todo_footer">
-    <p class="font4">Clear all completed</p>
+    <p class="clear_all font4">Clear all completed</p>
   </footer>
 </section>
 `;
@@ -44,6 +44,12 @@ const description = document.querySelector('.description_input');
 const form = document.querySelector('.todo_form');
 
 const newToDoRec = new ToDoRecord();
+
+const clearallBtn = document.querySelector('.clear_all');
+
+clearallBtn.addEventListener('click', () => {
+  newToDoRec.clearAll();
+});
 
 const clearInputFields = (description) => {
   description.value = '';
