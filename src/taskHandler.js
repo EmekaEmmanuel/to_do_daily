@@ -57,8 +57,6 @@ export default class ToDoRecord {
         if (checkEditBtn) {
           const clickCheckEditBtn = e.target;
           this.updateDescriptions(clickCheckEditBtn);
-        } else {
-          return;
         }
       });
     }
