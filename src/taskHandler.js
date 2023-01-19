@@ -35,7 +35,7 @@ export default class ToDoRecord {
         eachList
           += `<article key=${storingparam[i].index} class=" todo_item">
             <fieldset class="border_none">
-            <input class="border_none" type="checkbox">
+            <input value=false checkbox_index=${i} class="border_none checkbox_tag checkbox_${i}" type="checkbox">
             <input class="input_${i} border_none hide font3" data-inputID="${i}" type="text" value=${storingparam[i].description} required> 
             <p descId='${i}' class="describ font3">${storingparam[i].description}</p>
         </fieldset>
@@ -50,6 +50,7 @@ export default class ToDoRecord {
       listBody.addEventListener('click', (e) => {
         const checkClickedBtn = e.target.classList.contains('remove_btn');
         const checkEditBtn = e.target.classList.contains('describ');
+        const checkCheckBox = e.target.classList.contains('checkbox_tag');
         if (checkClickedBtn) {
           const clicked = e.target;
           this.removeToDo(clicked);
@@ -57,6 +58,10 @@ export default class ToDoRecord {
         if (checkEditBtn) {
           const clickCheckEditBtn = e.target;
           this.updateDescriptions(clickCheckEditBtn);
+        }
+        if (checkCheckBox) {
+          const clickCheckBoxBtn = e.target;
+          this.updateTaskStatus(clickCheckBoxBtn);
         }
       });
     }
@@ -94,5 +99,22 @@ export default class ToDoRecord {
         getTripleDotsTag.classList.add('hide');
       }
     });
+  }
+
+  updateTaskStatus(clickCheckBoxBtn) {
+    let checkBoxindex = clickCheckBoxBtn.getAttribute('checkbox_index'); 
+    clickCheckBoxBtn.addEventListener('change', () => { 
+      if (clickCheckBoxBtn.checked===true) { 
+        this.storedTasks[checkBoxindex].completed=true;
+        console.log(this.storedTasks[checkBoxindex].completed); 
+        localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+
+      }
+      if (clickCheckBoxBtn.checked===false) { 
+        this.storedTasks[checkBoxindex].completed=false;
+        console.log(this.storedTasks[checkBoxindex].completed); 
+        localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
+      }
+    }) 
   }
 }
