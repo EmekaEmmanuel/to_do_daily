@@ -36,7 +36,7 @@
 
 > Describe your project in 1 or 2 sentences.
 
-This project is a simple program to track our To Do tasks; Built using webpack and served by a webpack dev server.
+This project is a simple program to track our To Do tasks; It allows to create, delete and store tasks to localstorage. Built using webpack and served by a webpack dev server.
 
 ## 🛠 Built With <a name="built-with"></a>
 
