@@ -35,7 +35,7 @@ export default class ToDoRecord {
         eachList
           += `<article key=${storingparam[i].index} class=" todo_item">
             <fieldset class="border_none">
-            <input value=false checkbox_index=${i} class="border_none checkbox_tag checkbox_${i}" type="checkbox">
+            <input ${storingparam[i].completed===true?'checked':''} value=false checkbox_index=${i} class="border_none checkbox_tag checkbox_${i}" type="checkbox">
             <input class="input_${i} border_none hide font3" data-inputID="${i}" type="text" value=${storingparam[i].description} required> 
             <p descId='${i}' class="describ font3">${storingparam[i].description}</p>
         </fieldset>
