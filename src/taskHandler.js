@@ -1,7 +1,7 @@
-import ToDo from "./modules/toDo.js"
-import { storedTasks } from "./modules/localStore.js";
+import ToDo from './modules/toDo.js';
+import storedTasks from './modules/localStore.js';
 import trashBinImg from './img/trashbin.png';
-import { byResetIndex } from "./modules/manipulateStore.js";
+import byResetIndex from './modules/manipulateStore.js';
 
 export default class ToDoRecord {
   constructor() {
@@ -12,13 +12,12 @@ export default class ToDoRecord {
     if (!this.storedTasks) {
       this.storedTasks = [];
     }
-    let tasksLength = this.storedTasks.length + 1
+    const tasksLength = this.storedTasks.length + 1;
     const newToDo = new ToDo(description.value, false, tasksLength);
-    console.log(newToDo);
     this.storedTasks.push(newToDo);
     localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
-    let storingparam = this.storedTasks
-    byResetIndex(storingparam)
+    const storingparam = this.storedTasks;
+    byResetIndex(storingparam);
     this.displayToDoRecord();
   }
 
@@ -30,8 +29,8 @@ export default class ToDoRecord {
     } else {
       empty.style.display = 'none';
       let eachList = '';
-      let storingparam = this.storedTasks
-      byResetIndex(storingparam)
+      const storingparam = this.storedTasks;
+      byResetIndex(storingparam);
       for (let i = 0; i < storingparam.length; i += 1) {
         eachList
           += `<article key=${storingparam[i].index} class=" todo_item">
@@ -50,7 +49,6 @@ export default class ToDoRecord {
       listBody.addEventListener('click', (e) => {
         const checkClickedBtn = e.target.classList.contains('remove_btn');
         const clicked = e.target;
-        // console.log(clicked);
         if (!checkClickedBtn) {
           return;
         }
@@ -64,9 +62,8 @@ export default class ToDoRecord {
     const filteredTasks = this.storedTasks.filter((task) => task.index.toString() !== index);
     this.storedTasks = filteredTasks;
     localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
-    let storingparam = this.storedTasks
-    byResetIndex(storingparam)
+    const storingparam = this.storedTasks;
+    byResetIndex(storingparam);
     this.displayToDoRecord();
-    // byResetIndex(); 
   }
 }

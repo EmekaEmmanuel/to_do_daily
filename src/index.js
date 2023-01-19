@@ -1,9 +1,9 @@
 import './style.css';
 import ToDoRecord from './taskHandler.js';
-import { myTasks, myTasksLength } from './modules/taskData.js';
 import refreshImg from './img/Refresh_icon.svg.png';
 import arrowIconImg from './img/favpng_arrow-icon-design.png';
-import trashBinImg from './img/trashbin.png'; 
+import trashBinImg from './img/trashbin.png';
+
 const appContainer = document.querySelector('.app_container');
 
 const appContainerTemplate = () => `

@@ -1,3 +1,3 @@
 const storedTasks = JSON.parse(localStorage.getItem('taskstored'));
 
-export {storedTasks}
+export default storedTasks;
