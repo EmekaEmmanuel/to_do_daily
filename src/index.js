@@ -1,7 +1,7 @@
 import './style.css';
 import ToDoRecord from './taskHandler.js';
 import refreshImg from './img/Refresh_icon.svg.png';
-import arrowIconImg from './img/favpng_arrow-icon-design.png'; 
+import arrowIconImg from './img/favpng_arrow-icon-design.png';
 
 const appContainer = document.querySelector('.app_container');
 

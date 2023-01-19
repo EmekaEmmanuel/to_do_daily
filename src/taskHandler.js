@@ -79,8 +79,8 @@ export default class ToDoRecord {
     const getBinImgTag = document.querySelector(`.bin_${editBtnAttribut}`);
     getEditInputTag.classList.remove('hide');
     clickCheckEditBtn.classList.add('hide');
-    getTripleDotsTag.classList.remove('hide')
-getBinImgTag.classList.add('hide')
+    getTripleDotsTag.classList.remove('hide');
+    getBinImgTag.classList.add('hide');
     getEditInputTag.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         this.storedTasks[editBtnAttribut].description = getEditInputTag.value;
@@ -90,9 +90,9 @@ getBinImgTag.classList.add('hide')
         this.displayToDoRecord();
         getEditInputTag.classList.add('hide');
         clickCheckEditBtn.classList.remove('hide');
-        getBinImgTag.classList.remove('hide')
-        getTripleDotsTag.classList.add('hide')
-      } 
+        getBinImgTag.classList.remove('hide');
+        getTripleDotsTag.classList.add('hide');
+      }
     });
   }
 }
