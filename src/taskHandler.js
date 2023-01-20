@@ -109,8 +109,7 @@ export default class ToDoRecord {
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
       }
       if (clickCheckBoxBtn.checked === false) {
-        this.storedTasks[checkBoxindex].completed = false;
-        // ruleLinethrough.style.textDecoration = "none";
+        this.storedTasks[checkBoxindex].completed = false; 
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
       }
     });
