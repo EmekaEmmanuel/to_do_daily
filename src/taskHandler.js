@@ -37,7 +37,7 @@ export default class ToDoRecord {
             <fieldset class="border_none">
             <input ${storingparam[i].completed===true?'checked':''} value=false checkbox_index=${i} class="border_none checkbox_tag checkbox_${i}" type="checkbox">
             <input class="input_${i} border_none hide font3" data-inputID="${i}" type="text" value=${storingparam[i].description} required> 
-            <p descId='${i}' class="describ ${storingparam[i].completed===true?'line_through':''} font3">${storingparam[i].description}</p>
+            <p descId='${i}' class="describ line_through_${i} ${storingparam[i].completed===true?'rule_line_through':''} font3">${storingparam[i].description}</p>
         </fieldset>
   
         <figure>
@@ -103,13 +103,16 @@ export default class ToDoRecord {
 
   updateTaskStatus(clickCheckBoxBtn) {
     const checkBoxindex = clickCheckBoxBtn.getAttribute('checkbox_index');
+    const ruleLinethrough = document.querySelector(`.line_through_${checkBoxindex}`); 
     clickCheckBoxBtn.addEventListener('change', () => {
       if (clickCheckBoxBtn.checked === true) {
         this.storedTasks[checkBoxindex].completed = true;
+        ruleLinethrough.style.textDecoration = "line-through #04aa6d solid 2px";
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
       }
       if (clickCheckBoxBtn.checked === false) {
-        this.storedTasks[checkBoxindex].completed = false; 
+        this.storedTasks[checkBoxindex].completed = false;
+        ruleLinethrough.style.textDecoration = "none";
         localStorage.setItem('taskstored', JSON.stringify(this.storedTasks));
       }
     });
