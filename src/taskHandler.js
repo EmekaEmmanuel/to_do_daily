@@ -75,6 +75,7 @@ export default class ToDoRecord {
     const storingparam = this.storedTasks;
     byResetIndex(storingparam);
     this.displayToDoRecord();
+    this.clearEmptyLocalStorage();
   }
 
   updateDescriptions(clickCheckEditBtn) {
@@ -128,5 +129,14 @@ export default class ToDoRecord {
     const storingparam = this.storedTasks;
     byResetIndex(storingparam);
     this.displayToDoRecord();
+    this.clearEmptyLocalStorage();
+  }
+
+  clearEmptyLocalStorage() {
+    const empty = document.querySelector('.empty_todo_tasks');
+    if (this.storedTasks.length === 0) {
+      localStorage.removeItem('taskstored');
+      empty.style.display = 'block';
+    }
   }
 }
