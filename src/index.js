@@ -40,6 +40,7 @@ const appContainerTemplate = () => `
 appContainer.innerHTML = appContainerTemplate();
 
 const description = document.querySelector('.description_input');
+const refreshIcon = document.querySelector('.refresh_img');
 
 const form = document.querySelector('.todo_form');
 
@@ -49,6 +50,10 @@ const clearallBtn = document.querySelector('.clear_all');
 
 clearallBtn.addEventListener('click', () => {
   newToDoRec.clearAll();
+});
+
+refreshIcon.addEventListener('click', () => {
+  newToDoRec.displayToDoRecord();
 });
 
 const clearInputFields = (description) => {
