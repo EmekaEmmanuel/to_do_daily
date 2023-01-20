@@ -77,6 +77,10 @@ img {
   height: 12.3px;
 }
 
+.line_through  {
+text-decoration: line-through #04aa6d solid 2px;
+} 
+
 .todo_form fieldset {
   display: flex;
   justify-content: center;
